@@ -10,10 +10,14 @@ console.log(velika);
 
 //Funkcije
 
-function pozdravi(ime) {
-    console.log("Dobrodosao, " + ime);
+function pozdravi(ime, spol) {
+    if (spol === 0) {
+        console.log("Dobrodosao, " + ime);
+    } else {
+        console.log("Dobrodosla, " + ime);
+    }
     console.log("Drago nam je da ste se pridruzili!");
 }
 
-pozdravi("Mujo");
-pozdravi("Selma")
+pozdravi("Mujo", 0);
+pozdravi("Selma", 1)
