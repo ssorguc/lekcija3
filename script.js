@@ -1,56 +1,35 @@
-let zvjezdica = ""
-for (let i = 1; i < 6; i++) {
-    zvjezdica = zvjezdica + "*";
-    console.log(zvjezdica);
-}
+document.getElementById("naslov").style.color = "red";
+//Random brojevi
 
-const ime = "SeLmA";
-const velika = ime.toLowerCase();
-console.log(velika);
+function generateRandomNumber() {
+    let randomNumber = Math.random() * 100;
+    let rounded = Math.floor(randomNumber) + 1;
 
-//Funkcije
-
-function pozdravi(ime, spol) {
-    if (spol === 0) {
-        console.log("Dobrodosao, " + ime);
+    if (rounded % 2 == 0) {
+        console.log("Ovaj broj je paran: " + rounded)
     } else {
-        console.log("Dobrodosla, " + ime);
+        console.log("Neparan " + rounded);
     }
-    console.log("Drago nam je da ste se pridruzili!");
+    return randomNumber;
 }
 
-pozdravi("Mujo", 0);
-pozdravi("Selma", 1)
+generateRandomNumber();
 
-let arrowPozdrav = (ime, spol) => {
-    if (spol === 0) {
-        console.log("Dobrodosao, " + ime);
-    } else {
-        console.log("Dobrodosla, " + ime);
-    }
-    console.log("Drago nam je da ste se pridruzili!");
+let osobaIme = "Selma";
+let osobaGodine = 23;
+let osoba = {
+    ime: "Selma",
+    godine: 23
+}
+osoba.ime = "Nove ime";
+console.log(osoba.ime)
+
+function ispisiPozdrav() {
+    document.getElementById("naslov").innerHTML = "Welcome";
 }
 
-arrowPozdrav("Huso", 0);
+let button = document.getElementById("click-me");
+button.addEventListener("click", ispisiPozdrav);
 
-//funkcije koje vracaju vrijednost
-function obimKruga(r) {
-    const pi = 3.14;
-    let obim = 2 * pi * r;
-    return obim;
-}
-
-const rezultat = obimKruga(10);
-console.log(rezultat);
-console.log(obimKruga(10));
-
-function countdown(n) {
-    if (n === 1) {
-        console.log("KRAJ")
-    } else {
-        console.log(n);
-        countdown(n - 1)
-    }
-}
-
-countdown(5);
+let mark = document.getElementById("mark");
+mark.addEventListener("click", ispisiPozdrav);
